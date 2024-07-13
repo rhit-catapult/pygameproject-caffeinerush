@@ -4,6 +4,7 @@ import random
 import time
 #hello caffeine Rushers
 
+# hi
 def main():
     # turn on pygame
     pygame.init()
