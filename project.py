@@ -16,6 +16,7 @@ def main():
 
     # let's set the framerate
     clock = pygame.time.Clock()
+    clock.tick(60)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -24,7 +25,7 @@ def main():
             # TODO: Add you events code
 
         # TODO: Fill the screen with whatever background color you like!
-        screen.fill((255, 255, 255))
+        screen.fill((255, 67, 233))
 
         # TODO: Add your project code
 
