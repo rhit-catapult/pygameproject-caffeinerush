@@ -9,9 +9,9 @@ def main():
     pygame.init()
 
     # create a screen
-    pygame.display.set_caption("Cool Project")
+    pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
-    screen = pygame.display.set_mode((640, 480))
+    screen = pygame.display.set_mode((1920, 1080))
 
     # let's set the framerate
     clock = pygame.time.Clock()
