@@ -4,6 +4,7 @@ import random
 import time
 
 
+# hi
 def main():
     # turn on pygame
     pygame.init()
