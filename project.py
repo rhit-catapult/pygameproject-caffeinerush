@@ -2,16 +2,17 @@ import pygame
 import sys
 import random
 import time
-#testing
+#hello caffeine Rushers
 
+# hi
 def main():
     # turn on pygame
     pygame.init()
 
     # create a screen
-    pygame.display.set_caption("Cool Project")
+    pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
-    screen = pygame.display.set_mode((640, 480))
+    screen = pygame.display.set_mode((1920, 1080))
 
     # let's set the framerate
     clock = pygame.time.Clock()
