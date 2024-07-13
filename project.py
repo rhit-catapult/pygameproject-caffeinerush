@@ -8,7 +8,7 @@ import time
 def main():
     # turn on pygame
     pygame.init()
-
+#hi
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
