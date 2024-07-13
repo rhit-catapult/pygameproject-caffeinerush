@@ -2,7 +2,7 @@ import pygame
 import sys
 import random
 import time
-#hello caffeiners
+#hello caffeine Rushers
 
 def main():
     # turn on pygame
