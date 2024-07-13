@@ -4,6 +4,7 @@ import random
 import time
 
 #Hello
+#lkas; egjl;aksdjg
 def main():
     # turn on pygame
     pygame.init()
