@@ -9,6 +9,8 @@ import sysconfig
 
 #hello caffeine Rushers
 
+
+
 # hi
 def main():
     # turn on pygame
@@ -44,8 +46,9 @@ def main():
                     running = False
 
                     # Open Task1.py using subprocess
-                    python_executable = sys.executable
-                    subprocess.Popen([python_executable ,"Task 1.py"])
+                    #python_executable = sys.executable
+                    #subprocess.Popen([python_executable ,"Task 1.py"]) This is another way to open another program
+                    #But it will not close the other program
                     os.execl(sys.executable, sys.executable, "Task 1.py")
 
 
@@ -59,6 +62,7 @@ def main():
         screen.fill((255, 67, 233))
         screen.blit(text_surface, text_rect) #"Play"
         screen.blit(text_surfaceTitle, text_rectTitle)
+        pygame.draw.rect(screen, (0,0,0,), (400,250, 200, 90), 10)
 
         # TODO: Add your project code
 
