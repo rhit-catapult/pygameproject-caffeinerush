@@ -2,6 +2,8 @@ import pygame
 import sys
 import random
 import time
+import subprocess
+import sysconfig
 #hello caffeine Rushers
 
 # hi
@@ -32,6 +34,13 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                # Check if the mouse click is on the button
+                if text_rect.collidepoint(event.pos):
+                    # Open Task1.py using subprocess
+                    python_executable = sys.executable
+                    subprocess.Popen([python_executable ,"Task 1.py"])
+                    running = False  # Close this script after opening Task1.py
 
             # TODO: Add you events code
 
