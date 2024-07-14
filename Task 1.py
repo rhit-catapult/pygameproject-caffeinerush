@@ -4,6 +4,7 @@ import random
 import time
 import subprocess
 import sysconfig
+import os
 
 def main():
     # turn on pygame
@@ -11,6 +12,7 @@ def main():
     screen_width = 1000 #defines the width
     screen_height = 600 #defines the height
     screen = pygame.display.set_mode((screen_width, screen_height))
+    bg_color = (255, 67, 233)
 #hi
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
@@ -24,5 +26,6 @@ def main():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        screen.fill((255, 67, 233))
+        screen.fill((bg_color))
+        pygame.display.update()
 main()
