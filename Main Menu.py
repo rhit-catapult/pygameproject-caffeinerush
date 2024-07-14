@@ -25,7 +25,7 @@ def main():
     font = pygame.font.Font(None, 100) #creates the font
     font2 = pygame.font.Font(None, 150)
     text_surface = font.render("PLAY", True, (0, 0, 0)) #creates text surface
-    text_surfaceTitle = font2.render("Caffeine Rush", True, (0,0,0))
+    text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect() #get the rect of the play button
     text_rectTitle = text_surfaceTitle.get_rect()
     text_rect.center = (screen_width // 2, screen_height // 2) #centers text

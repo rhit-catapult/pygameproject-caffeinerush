@@ -19,6 +19,12 @@ def main():
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
 
+    font = pygame.font.Font(None, 100)  # creates the font
+    text_surface = font.render("TEST", True, (255, 255, 255))  # creates text surface
+    text_rect = text_surface.get_rect()  # get the rect of the play button
+    text_rect.center = (screen_width // 2, screen_height // 2)  # centers text
+
+
     clock = pygame.time.Clock()
     clock.tick(60)
     while True:
@@ -27,5 +33,7 @@ def main():
                 sys.exit()
 
         screen.fill((bg_color))
+        screen.blit(text_surface, text_rect)  # "TEST"
+
         pygame.display.update()
 main()
