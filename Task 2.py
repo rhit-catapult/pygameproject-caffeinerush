@@ -6,9 +6,9 @@ import random
 class Ball:
     def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
         self.screen = screen
-        colorr = random.randint(100, 200)
-        colorg = random.randint(150, 200)
-        colorb = random.randint(200, 250)
+        colorr = random.randint(150, 170)
+        colorg = random.randint(185, 200)
+        colorb = random.randint(225, 250)
         self.color = (colorr, colorg, colorb)
         self.x = random.randint(0, 1000)
         self.y = random.randint(0, 600)
