@@ -1,77 +1,63 @@
 import pygame
 import sys
 import random
-import time
-import subprocess
-import sysconfig
-import os
 
 
+# You will implement this module ENTIRELY ON YOUR OWN!
+
+# TODO: Create a Ball class.
+# TODO: Possible member variables: screen, color, x, y, radius, speed_x, speed_y
+# TODO: Methods: __init__, draw, move
 class Ball:
-    def __init__(self, screen, x, y):
-        self.x = random.randint(0, 1000)
-        self.y = random.randint(0, 600)
-        self.xspeed = random.randint(-5, 5)
-        self.yspeed = random.randint(-5, 5)
+    def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
         self.screen = screen
-        self.radius = random.randint(1, 50)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        self.color = (r, g, b)
+        colorr = random.randint(100, 200)
+        colorg = random.randint(150, 200)
+        colorb = random.randint(200, 250)
+        self.color = (colorr, colorg, colorb)
+        self.x = x
+        self.y = y
+        self.radius = random.randint(7, 40)
+        self.speed_x = random.randint(1, 7)
+        self.speed_y = random.randint(-1, 5)
 
     def move(self):
-        self.x = self.x +self.xspeed
-        self.y = self.y + self.yspeed
-        if self.x > 800 - self.radius or self.x < 0 + self.radius:
-            self.xspeed *= -1
-        if self.y > 800 - self.radius or self.y < 0 + self.radius:
-            self.yspeed *= -1
+        self.y = self.y + self.speed_y
+        self.x = self.x + self.speed_x
+        if self.x - self.radius < 0 or self.x + self.radius > self.screen.get_width():
+            self.speed_x = -self.speed_x
+        if self.y - self.radius < 0 or self.y + self.radius > self.screen.get_height():
+            self.speed_y = -self.speed_y
 
     def draw(self):
-        pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
+        pygame.draw.circle(self.screen, self.color, (self.x + self.speed_x, self.y + self.speed_y), self.radius)
 
-
-#Clean the dishes (random bubble code)
 def main():
-    # turn on pygame
     pygame.init()
-    screen_width = 1000 #defines the width
-    screen_height = 600 #defines the height
-    screen = pygame.display.set_mode((screen_width, screen_height))
-    bg_color = (0, 0, 0)
+    screen = pygame.display.set_mode((800, 800))
+    pygame.display.set_caption('Bouncing Ball')
+    screen.fill(pygame.Color('gray'))
+    clock = pygame.time.Clock()
 
-    test_ball = Ball(screen, 100, 100)
     balls = []
-    for i in range(0, 10):
-        ball = Ball(screen, 100, 100)
+    for i in range(0,10000):
+        ball = Ball(screen, 'black', 150, 150, 150, 150, 150)
         balls.append(ball)
 
-    pygame.display.set_caption("Caffeine Rush")
-    # TODO: Change the size of the screen as you see fit!
-    screen = pygame.display.set_mode((screen_width, screen_height))  # sets the screen dimentions
-
-    font = pygame.font.Font(None, 100)  # creates the font
-    text_surface = font.render("TEST 2", True, (255, 255, 255))  # creates text surface
-    text_rect = text_surface.get_rect()  # get the rect of the play button
-    text_rect.center = (screen_width // 2, screen_height // 2)  # centers text
-
-    clock = pygame.time.Clock()
-    clock.tick(60)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        screen.fill((bg_color))
-        screen.blit(text_surface, text_rect)  # "TEST"
+        clock.tick(60)
+        screen.fill(pygame.Color('lavender'))
 
         for ball in balls:
-            ball.draw()
             ball.move()
+            ball.draw()
 
         pygame.display.update()
 
 
 main()
+
