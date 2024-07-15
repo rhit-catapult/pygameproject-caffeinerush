@@ -23,13 +23,13 @@ def main():
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
     font = pygame.font.Font(None, 100) #creates the font
-    font2 = pygame.font.Font(None, 150)
+    font2 = pygame.font.SysFont('papyrus', 100)
     text_surface = font.render("PLAY", True, (0, 0, 0)) #creates text surface
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect() #get the rect of the play button
     text_rectTitle = text_surfaceTitle.get_rect()
-    text_rect.center = (screen_width // 2, screen_height // 2) #centers text
-    text_rectTitle = (screen_width - 860, screen_height - 500)
+    text_rect.center = (screen_width - 502, screen_height //2) #centers text
+    text_rectTitle = (screen_width - 840, screen_height - 500)
 
 
     # let's set the framerate
@@ -68,5 +68,6 @@ def main():
 
         # don't forget the update, otherwise nothing will show up!
         pygame.display.update()
+
 
 main()
