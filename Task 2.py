@@ -10,8 +10,8 @@ class Ball:
         colorg = random.randint(150, 200)
         colorb = random.randint(200, 250)
         self.color = (colorr, colorg, colorb)
-        self.x = x
-        self.y = y
+        self.x = random.randint(0, 1000)
+        self.y = random.randint(0, 600)
         self.radius = random.randint(7, 40)
         self.speed_x = random.randint(1, 7)
         self.speed_y = random.randint(-1, 5)
@@ -29,7 +29,7 @@ class Ball:
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((800, 800))
+    screen = pygame.display.set_mode((1000, 600))
     pygame.display.set_caption('Bouncing Ball')
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
