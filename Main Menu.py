@@ -23,7 +23,7 @@ def main():
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
     font = pygame.font.Font(None, 100) #creates the font
-    font2 = pygame.font.SysFont('papyrus', 100)
+    font2 = pygame.font.Font('papyrus.ttf', 100)
     text_surface = font.render("PLAY", True, (0, 0, 0)) #creates text surface
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect() #get the rect of the play button
@@ -70,4 +70,5 @@ def main():
         pygame.display.update()
 
 
+print(pygame.font.get_fonts())
 main()
