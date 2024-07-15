@@ -26,6 +26,11 @@ def main():
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rect.center = (screen_width // 2, screen_height // 2)  # centers text
 
+    up_count = 0
+    down_count = 0
+    left_count = 0
+    right_count = 0
+
 
     clock = pygame.time.Clock()
     clock.tick(60)
@@ -34,9 +39,11 @@ def main():
             if event.type == pygame.QUIT:
                 sys.exit()
 
+        pressed_keys = pygame.key.get_pressed()
+
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
-        pressed_keys = pygame.key.get_pressed()
+
 
         pygame.display.update()
 main()
