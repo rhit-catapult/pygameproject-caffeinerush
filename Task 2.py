@@ -3,11 +3,6 @@ import sys
 import random
 
 
-# You will implement this module ENTIRELY ON YOUR OWN!
-
-# TODO: Create a Ball class.
-# TODO: Possible member variables: screen, color, x, y, radius, speed_x, speed_y
-# TODO: Methods: __init__, draw, move
 class Ball:
     def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
         self.screen = screen
