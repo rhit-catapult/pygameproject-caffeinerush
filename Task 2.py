@@ -6,6 +6,7 @@ import subprocess
 import sysconfig
 import os
 
+#Clean the dishes (random bubble code)
 def main():
     # turn on pygame
     pygame.init()
