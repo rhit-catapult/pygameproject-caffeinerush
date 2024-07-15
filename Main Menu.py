@@ -19,11 +19,11 @@ def main():
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
-    font = pygame.font.Font(None, 100) #creates the font
+    font = pygame.font.Font('papyrus.ttf', 50) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
     text_surfont = pygame.font.Font(None, 100) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
-    text_surface = font.render("PLAY", True, (228, 169, 165)) #creates text surface
+    text_surface = font.render("PLAY", True, (250, 209, 205)) #creates text surface
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rectTitle = text_surfaceTitle.get_rect()
