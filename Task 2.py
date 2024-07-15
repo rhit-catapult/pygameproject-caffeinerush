@@ -10,22 +10,22 @@ class Ball:
         colorg = random.randint(185, 200)
         colorb = random.randint(225, 250)
         self.color = (colorr, colorg, colorb)
-        self.x = random.randint(0, 1000)
-        self.y = random.randint(0, 600)
+        self.x = random.randint(0, 200)
+        self.y = random.randint(0, 200)
         self.radius = random.randint(50, 55)
         self.speed_x = random.randint(1, 7)
         self.speed_y = random.randint(-1, 5)
 
     def move(self):
-        self.y = self.speed_y + self.y
-        self.x = self.speed_x + self.x
-        if self.x - self.radius < 0 or self.x + self.radius > self.screen.get_height():
+        self.y = self.y + self.speed_y
+        self.x = self.x + self.speed_x
+        if self.x - self.radius < 0 or self.x + self.radius > self.screen.get_width():
             self.speed_x = -self.speed_x
         if self.y - self.radius < 0 or self.y + self.radius > self.screen.get_height():
             self.speed_y = -self.speed_y
+
     def draw(self):
         pygame.draw.circle(self.screen, self.color, (self.x + self.speed_x, self.y + self.speed_y), self.radius)
-
 
 
 def main():
