@@ -16,7 +16,7 @@ def main():
     screen_width = 1000 #defines the width
     screen_height = 600 #defines the height
     screen = pygame.display.set_mode((screen_width, screen_height))
-    bg_color = (0, 0, 0)
+    bg_color = ("white")
 
 #hi
     # create a screen
@@ -25,14 +25,11 @@ def main():
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
 
     font = pygame.font.Font(None, 100)  # creates the font
-    text_surface = font.render("TEST", True, (255, 255, 255))  # creates text surface
+    text_surface = font.render("Match Order To Customer", True, (250, 255, 20))  # creates text surface
     text_rect = text_surface.get_rect()  # get the rect of the play button
-    text_rect.center = (screen_width // 2, screen_height // 2)  # centers text
+    text_rect.center = ( 500, 40)  # centers text
 
-    up_count = 0
-    down_count = 0
-    left_count = 0
-    right_count = 0
+
 
 
     clock = pygame.time.Clock()

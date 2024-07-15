@@ -5,8 +5,8 @@ import sys
 class Character:
     def __init__(self, screen: pygame.Surface, x, y):
         self.screen = screen
-        self.x = x
-        self.y = y
+        self.x = x + 500
+        self.y = y + 300
         self.draw_banna = False
         self.image = pygame.image.load('Apple-6.jpg')
         self.width = 80
