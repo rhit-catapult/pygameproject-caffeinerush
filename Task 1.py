@@ -14,6 +14,7 @@ def main():
     screen_height = 600 #defines the height
     screen = pygame.display.set_mode((screen_width, screen_height))
     bg_color = (0, 0, 0)
+
 #hi
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
@@ -35,6 +36,7 @@ def main():
 
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
+        pressed_keys = pygame.key.get_pressed()
 
         pygame.display.update()
 main()
