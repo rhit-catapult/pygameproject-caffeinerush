@@ -12,7 +12,7 @@ class Ball:
         self.color = (colorr, colorg, colorb)
         self.x = random.randint(0, 1000)
         self.y = random.randint(0, 600)
-        self.radius = random.randint(7, 40)
+        self.radius = random.randint(50, 55)
         self.speed_x = random.randint(1, 7)
         self.speed_y = random.randint(-1, 5)
 
