@@ -23,11 +23,11 @@ def main():
     font2 = pygame.font.Font('papyrus.ttf', 100)
     text_surfont = pygame.font.Font(None, 100) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
-    text_surface = font.render("PLAY", True, (0, 0, 0)) #creates text surface
+    text_surface = font.render("PLAY", True, (228, 169, 165)) #creates text surface
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
-    text_rect = text_surface.get_rect() #get the rect of the play button
+    text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rectTitle = text_surfaceTitle.get_rect()
-    text_rect.center = (screen_width - 502, screen_height //2) #centers text
+    text_rect.center = (625, 456) #centers text
     text_rectTitle = (screen_width - 840, screen_height - 500)
 
 
@@ -61,7 +61,6 @@ def main():
         screen.fill((228, 190, 159))
         screen.blit(image1, (0, -100))
         screen.blit(text_surface, text_rect)#"Play"
-        pygame.draw.rect(screen, (0,0,0,), (400,250, 200, 90), 10)
 
 
         # TODO: Add your project code
