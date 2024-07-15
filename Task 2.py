@@ -9,10 +9,10 @@ import os
 
 class Ball:
     def __init__(self, screen, x, y):
-        self.x = random.randint(0, 800)
-        self.y = random.randint(0, 800)
-        self.xspeed = random.randint(-5, 10)
-        self.yspeed = random.randint(-5, 10)
+        self.x = random.randint(0, 1000)
+        self.y = random.randint(0, 600)
+        self.xspeed = random.randint(-5, 5)
+        self.yspeed = random.randint(-5, 5)
         self.screen = screen
         self.radius = random.randint(1, 50)
 
@@ -22,7 +22,7 @@ class Ball:
         self.color = (r, g, b)
 
     def move(self):
-        self.x = self.x + self.xspeed
+        self.x = self.x +self.xspeed
         self.y = self.y + self.yspeed
         if self.x > 800 - self.radius or self.x < 0 + self.radius:
             self.xspeed *= -1
