@@ -10,9 +10,9 @@ class Ball:
         colorg = random.randint(185, 200)
         colorb = random.randint(225, 250)
         self.color = (colorr, colorg, colorb)
-        self.x = random.randint(0, 200)
-        self.y = random.randint(0, 200)
         self.radius = random.randint(50, 55)
+        self.x = random.randint(0 + self.radius, 1000 - self.radius)
+        self.y = random.randint(0 + self.radius, 600 - self.radius)
         self.speed_x = random.randint(1, 7)
         self.speed_y = random.randint(-1, 5)
 
