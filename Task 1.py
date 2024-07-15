@@ -25,7 +25,9 @@ def main():
     text_surface = font.render("TEST", True, (255, 255, 255))  # creates text surface
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rect.center = (screen_width // 2, screen_height // 2)  # centers text
+    Image1 = pygame.image.load('Apple-6.jpg')
 
+    Image1 = pygame.transform.scale(Image1, (80, 80))
     up_count = 0
     down_count = 0
     left_count = 0
@@ -43,6 +45,7 @@ def main():
 
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
+        screen.blit(Image1, (100, 100))
 
         pygame.display.update()
 main()
