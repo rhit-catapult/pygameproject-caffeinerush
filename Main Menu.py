@@ -29,6 +29,7 @@ def main():
     text_rectTitle = text_surfaceTitle.get_rect()
     text_rect.center = (625, 456) #centers text
     text_rectTitle = (screen_width - 840, screen_height - 500)
+    #
 
 
     # let's set the framerate
