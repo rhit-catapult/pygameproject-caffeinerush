@@ -24,6 +24,8 @@ def main():
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
     font = pygame.font.Font(None, 100) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
+    text_surfont = pygame.font.Font(None, 100) #creates the font
+    font2 = pygame.font.Font('papyrus.ttf', 100)
     text_surface = font.render("PLAY", True, (0, 0, 0)) #creates text surface
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect() #get the rect of the play button
@@ -63,6 +65,7 @@ def main():
         screen.blit(text_surface, text_rect) #"Play"
         screen.blit(text_surfaceTitle, text_rectTitle)
         pygame.draw.rect(screen, (0,0,0,), (400,250, 200, 90), 10)
+
 
         # TODO: Add your project code
 

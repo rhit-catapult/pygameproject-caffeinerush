@@ -6,6 +6,7 @@ import subprocess
 import sysconfig
 import os
 
+
 def main():
     # turn on pygame
     pygame.init()
