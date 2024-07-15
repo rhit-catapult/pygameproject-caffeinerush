@@ -6,6 +6,7 @@ import subprocess
 import sysconfig
 import os
 
+import Customer_Aron_is_silly
 import my_character
 
 
@@ -38,7 +39,7 @@ def main():
     clock.tick(60)
     player = my_character.Character(screen, 10, 10)
     is_dragging = False
-
+    customer = Customer_Aron_is_silly.Customer(screen, 250, 260)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -76,7 +77,7 @@ def main():
             player_y -= 1
         if keys[pygame.K_DOWN]:
             player_y += 1
-
+        customer.draw()
         player.draw()
         pygame.display.update()
 main()
