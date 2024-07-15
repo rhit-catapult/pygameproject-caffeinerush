@@ -6,6 +6,33 @@ import subprocess
 import sysconfig
 import os
 
+
+class Ball:
+    def __init__(self, screen, x, y):
+        self.x = random.randint(0, 800)
+        self.y = random.randint(0, 800)
+        self.xspeed = random.randint(-5, 10)
+        self.yspeed = random.randint(-5, 10)
+        self.screen = screen
+        self.radius = random.randint(1, 50)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        self.color = (r, g, b)
+
+    def move(self):
+        self.x = self.x + self.xspeed
+        self.y = self.y + self.yspeed
+        if self.x > 800 - self.radius or self.x < 0 + self.radius:
+            self.xspeed *= -1
+        if self.y > 800 - self.radius or self.y < 0 + self.radius:
+            self.yspeed *= -1
+
+    def draw(self):
+        pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
+
+
 #Clean the dishes (random bubble code)
 def main():
     # turn on pygame
@@ -14,6 +41,12 @@ def main():
     screen_height = 600 #defines the height
     screen = pygame.display.set_mode((screen_width, screen_height))
     bg_color = (0, 0, 0)
+
+    test_ball = Ball(screen, 100, 100)
+    balls = []
+    for i in range(0, 10):
+        ball = Ball(screen, 100, 100)
+        balls.append(ball)
 
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
@@ -33,6 +66,10 @@ def main():
 
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
+
+        for ball in balls:
+            ball.draw()
+            ball.move()
 
         pygame.display.update()
 
