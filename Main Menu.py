@@ -7,17 +7,14 @@ import os
 import sysconfig
 
 
-#hello caffeine Rushers
 
-
-
-# hi
 def main():
     # turn on pygame
     pygame.init()
     screen_width = 1000 #defines the width
     screen_height = 600 #defines the height
-#hi
+    image1 = pygame.image.load("CaffeineCafe.jpeg")
+    image1 = pygame.transform.scale(image1, (1000, 700))
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
@@ -62,8 +59,8 @@ def main():
 
         # TODO: Fill the screen with whatever background color you like!
         screen.fill((228, 190, 159))
-        screen.blit(text_surface, text_rect) #"Play"
-        screen.blit(text_surfaceTitle, text_rectTitle)
+        screen.blit(image1, (0, -100))
+        screen.blit(text_surface, text_rect)#"Play"
         pygame.draw.rect(screen, (0,0,0,), (400,250, 200, 90), 10)
 
 
