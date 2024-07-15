@@ -44,8 +44,8 @@ def main():
 
     test_ball = Ball(screen, 100, 100)
     balls = []
-    for i in range(0, 100):
-        ball = Ball(screen, 'black', 150, 150, 150, 150, 150)
+    for i in range(0, 10):
+        ball = Ball(screen, 100, 100)
         balls.append(ball)
 
     pygame.display.set_caption("Caffeine Rush")
