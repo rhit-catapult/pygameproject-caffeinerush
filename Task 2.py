@@ -35,7 +35,7 @@ def main():
     clock = pygame.time.Clock()
 
     balls = []
-    for i in range(0,10000):
+    for i in range(0,15):
         ball = Ball(screen, 'black', 150, 150, 150, 150, 150)
         balls.append(ball)
 
