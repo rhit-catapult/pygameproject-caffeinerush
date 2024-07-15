@@ -16,12 +16,6 @@ class Ball:
         self.speed_x = random.randint(1, 7)
         self.speed_y = random.randint(-1, 5)
 
-
-
-
-
-
-
     def move(self):
         self.y = self.speed_y + self.y
         self.x = self.speed_x + self.x
