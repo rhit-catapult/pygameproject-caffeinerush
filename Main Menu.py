@@ -59,7 +59,7 @@ def main():
             # TODO: Add you events code
 
         # TODO: Fill the screen with whatever background color you like!
-        screen.fill((255, 67, 233))
+        screen.fill((228, 190, 159))
         screen.blit(text_surface, text_rect) #"Play"
         screen.blit(text_surfaceTitle, text_rectTitle)
         pygame.draw.rect(screen, (0,0,0,), (400,250, 200, 90), 10)
