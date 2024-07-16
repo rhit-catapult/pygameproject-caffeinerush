@@ -11,6 +11,7 @@ class Ball:
         colorb = random.randint(225, 250)
         self.color = (colorr, colorg, colorb)
         self.radius = random.randint(50, 55)
+       # bubble_radius = self.radius
         self.x = random.randint(0 + self.radius, 1000 - self.radius)
         self.y = random.randint(0 + self.radius, 600 - self.radius)
         self.speed_x = random.randint(1, 7)
@@ -34,6 +35,13 @@ def main():
     pygame.display.set_caption('Bouncing Ball')
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
+    text_color = (0, 0, 0)
+    screen_width = 1000
+    screen_height = 600
+    countdown_seconds = 7
+    start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
+    timer_font = pygame.font.Font(None, 100)
+    timer_text = ""
 
     balls = []
     for i in range(0,15):
@@ -45,6 +53,14 @@ def main():
             if event.type == pygame.QUIT:
                 sys.exit()
 
+        elapsed_time = pygame.time.get_ticks() - start_time
+        remaining_time = max(0, countdown_seconds * 1000 - elapsed_time)
+        seconds = remaining_time // 1000
+
+        seconds = seconds % 60
+        timer_text = f"{seconds:7}"
+
+
         clock.tick(60)
         screen.fill(pygame.Color('lavender'))
 
@@ -52,7 +68,24 @@ def main():
             ball.move()
             ball.draw()
 
+
+
+       # pressed_keys = pygame.key.get_pressed()
+       # if event.type == pygame.MOUSEBUTTONDOWN:
+           # x = event.pos[0]
+           # y = event.pos[1]
+       # if #distance_from_bubble <= bubble_radius:
+           # ball.remove(Ball)
+
+        timer_surface = timer_font.render(timer_text, True, text_color)
+        timer_rect = timer_surface.get_rect(center=(5, 50))
+        screen.blit(timer_surface, timer_rect)
+
+
         pygame.display.update()
+        if remaining_time <= 0:
+            print("Countdown finished!")
+            running = False
 
 
 main()
