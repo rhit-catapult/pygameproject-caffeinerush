@@ -27,7 +27,7 @@ def main():
     text_surfaceTitle = font2.render("Caffeine Rush", True, (255,255,255))
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rectTitle = text_surfaceTitle.get_rect()
-    text_rect.center = (625, 456) #centers text
+    text_rect.center = (625, 456) #centers text/
     text_rectTitle = (screen_width - 840, screen_height - 500)
     #
 

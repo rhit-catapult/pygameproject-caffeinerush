@@ -37,6 +37,12 @@ def main():
     player = my_character.Character(screen, 10, 10)
     is_dragging = False
     customer = Customer_Aron_is_silly.Customer(screen, 250, 260)
+    customers = []
+    customers.append(customer)
+    foods = []
+    foods.append(my_character.Character(screen, 20, 30))
+    foods.append(my_character.Character(screen, 90, 400))
+    dragging_food = None
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -44,19 +50,26 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
                 # for food in foods
-                if player.get_rect().collidepoint(pos):
-                    is_dragging = True
+                for food in foods:
+                    if food.get_rect().collidepoint(pos):
+                        is_dragging = True
+                        dragging_food = food
 
             if event.type == pygame.MOUSEBUTTONUP and is_dragging:
                 is_dragging = False
-                pos = event.pos
-                if customer.get_rect().colliderect(player.get_rect()):
-                    # remove customer here
-                    print("RIP customer")
+                for customer in customers:
+                    if customer.get_rect().colliderect(dragging_food.get_rect()):
+                        # remove customer here
+                        customers.remove(customer)
+                        if dragging_food in foods:
+                            foods.remove(dragging_food)
+                        print("RIP customer")
 
 
 
         pressed_keys = pygame.key.get_pressed()
+
+        customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 600), random.randint(0, 600)))
 
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
@@ -67,11 +80,18 @@ def main():
 
         if is_dragging:
             pos = pygame.mouse.get_pos()
-            player.x = pos[0] - player.width / 2
-            player.y = pos[1] - player.width / 2
+            dragging_food.x = pos[0] - player.width / 2
+            dragging_food.y = pos[1] - player.width / 2
 
 
-        customer.draw()
-        player.draw()
+        # customer.draw()
+        # player.draw()
+
+        for customer in customers:
+            customer.draw()
+
+        for food in foods:
+            food.draw()
+
         pygame.display.update()
 main()
