@@ -69,7 +69,13 @@ def main():
 
         pressed_keys = pygame.key.get_pressed()
 
-        customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 600), random.randint(0, 600)))
+        if len(customers) <= 5:
+            customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 900), random.randint(0, 500)))
+        if len(foods) <= 500:
+            foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(0, 400)))
+
+
+
 
         screen.fill((bg_color))
         screen.blit(text_surface, text_rect)  # "TEST"
