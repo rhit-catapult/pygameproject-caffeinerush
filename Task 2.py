@@ -53,7 +53,7 @@ def main():
     text_color = (0, 0, 0)
     screen_width = 1000
     screen_height = 600
-    countdown_seconds = 7
+    countdown_seconds = 5
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
