@@ -129,7 +129,10 @@ def main():
         task_screen.blit(task_text_surface, task_text_rect)
 
         pygame.display.flip()
-        pygame.time.delay(10000)
+        pygame.time.wait(10000)
+
+
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
