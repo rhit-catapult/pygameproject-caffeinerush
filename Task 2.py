@@ -1,5 +1,6 @@
 import pygame
 import sys
+import math
 import random
 
 
@@ -27,6 +28,20 @@ class Ball:
 
     def draw(self):
         pygame.draw.circle(self.screen, self.color, (self.x + self.speed_x, self.y + self.speed_y), self.radius)
+
+def distance(point1, point2):
+        point1_x = point1[0]
+        point2_x = point2[0]
+        point1_y = point1[1]
+        point2_y = point2[1]
+
+        # TODO 4: Return the actual distance between point 1 and point 2.
+        #  Hint: you will need the math library for the sqrt function.
+        #       distance = sqrt(   (delta x) ** 2 + (delta y) ** 2  )
+        delta_x = point2_x - point1_x
+        delta_y = point2_y - point1_y
+        dist = math.sqrt(delta_x ** 2 + delta_y ** 2)
+        return dist
 
 
 def main():
@@ -64,18 +79,16 @@ def main():
         clock.tick(60)
         screen.fill(pygame.Color('lavender'))
 
+        pos = pygame.mouse.get_pos()
         for ball in balls:
             ball.move()
             ball.draw()
+            if pygame.mouse.get_pressed()[0] and distance((ball.x, ball.y), pos) < ball.radius:
+                balls.remove(ball)
 
 
 
-       # pressed_keys = pygame.key.get_pressed()
-       # if event.type == pygame.MOUSEBUTTONDOWN:
-           # x = event.pos[0]
-           # y = event.pos[1]
-       # if #distance_from_bubble <= bubble_radius:
-           # ball.remove(Ball)
+
 
         timer_surface = timer_font.render(timer_text, True, text_color)
         timer_rect = timer_surface.get_rect(center=(5, 50))
