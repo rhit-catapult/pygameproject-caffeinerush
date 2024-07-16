@@ -8,9 +8,9 @@ class Character:
         self.x = x + 500
         self.y = y + 300
         self.draw_banna = False
-        self.image = pygame.image.load('Apple-6.jpg')
-        self.width = 80
-        self.height = 80
+        self.image = pygame.image.load('Coffee.jpeg')
+        self.width = 100
+        self.height = 100
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
 
     def draw(self):

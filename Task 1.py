@@ -70,15 +70,7 @@ def main():
             player.x = pos[0] - player.width / 2
             player.y = pos[1] - player.width / 2
 
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
-            player.move(-10, 0)
-        if keys[pygame.K_RIGHT]:
-            player.move(10, 0)
-        if keys[pygame.K_UP]:
-            player_y -= 1
-        if keys[pygame.K_DOWN]:
-            player_y += 1
+
         customer.draw()
         player.draw()
         pygame.display.update()
