@@ -57,7 +57,7 @@ def main():
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
-    task_font = pygame.font.Font(None, 50)
+    task_font = pygame.font.Font('papyrus.ttf', 50)
 
     balls = []
     for i in range(0,15):
@@ -129,6 +129,7 @@ def main():
         task_screen.blit(task_text_surface, task_text_rect)
 
         pygame.display.flip()
+        pygame.time.delay(10000)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
