@@ -57,16 +57,28 @@ def main():
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
+    task_font = pygame.font.Font(None, 50)
 
     balls = []
     for i in range(0,15):
         ball = Ball(screen, 'black', 150, 150, 150, 150, 150)
         balls.append(ball)
+    in_game = True
+    task_completed = False
 
-    while True:
+
+
+    while in_game:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+
+        if not balls:
+            task_completed = True
+            in_game = False
+
+
 
         elapsed_time = pygame.time.get_ticks() - start_time
         remaining_time = max(0, countdown_seconds * 1000 - elapsed_time)
@@ -97,13 +109,33 @@ def main():
         screen.blit(timer_surface, timer_rect)
 
 
+
+
+
         pygame.display.update()
-        if not balls:
-            running = False
-
-        if remaining_time <= 0:
-            running = False
 
 
+
+
+
+
+    while task_completed:
+        task_screen = pygame.display.set_mode((1000, 600))
+        task_screen.fill(pygame.Color('lightgreen'))
+
+        task_text = "Task completed!"
+        task_text_surface = task_font.render(task_text, True, (0, 0, 0))
+        task_text_rect = task_text_surface.get_rect(center=(500, 300))
+        task_screen.blit(task_text_surface, task_text_rect)
+
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+
+            
 main()
 
