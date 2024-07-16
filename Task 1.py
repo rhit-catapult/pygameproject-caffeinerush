@@ -45,7 +45,7 @@ def main():
     dragging_food = None
 
     food_images = []
-    food_images.append(pygame.image.load("ChocoStraw.jpg"))
+    food_images.append(pygame.image.load("ChocoStrawNoBackground.png"))
     food_images.append(pygame.image.load("Coffee.jpg"))
     food_images.append(pygame.image.load("Crossaint.jpg"))
     food_images.append(pygame.image.load("Cupcake.jpg"))
