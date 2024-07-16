@@ -43,7 +43,8 @@ def main():
     # foods.append(my_character.Character(screen, 20, 30))
     # foods.append(my_character.Character(screen, 90, 400))
     dragging_food = None
-    #SETHSEH
+    #
+    #ASFGAFDH
     food_images = []
     food_images.append(pygame.image.load("ChocoStrawNoBackground.png"))
     food_images.append(pygame.image.load("Coffee.jpg"))
