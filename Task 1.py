@@ -24,10 +24,10 @@ def main():
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
 
-    font = pygame.font.Font(None, 100)  # creates the font
-    text_surface = font.render("Match Order To Customer", True, (250, 255, 20))  # creates text surface
+    font = pygame.font.Font("calibri-italic.ttf", 70)  # creates the font
+    text_surface = font.render("Match Order To Customer", True, (25, 150, 20))  # creates text surface
     text_rect = text_surface.get_rect()  # get the rect of the play button
-    text_rect.center = ( 500, 40)  # centers text
+    text_rect.center = (500, 40)  # centers text
 
 
 
