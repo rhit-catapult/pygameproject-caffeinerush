@@ -119,7 +119,7 @@ def main():
 
 
 
-    while task_completed:
+    if task_completed:
         task_screen = pygame.display.set_mode((1000, 600))
         task_screen.fill(pygame.Color('lightgreen'))
 
