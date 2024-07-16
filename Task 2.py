@@ -97,7 +97,7 @@ def main():
 
         pygame.display.update()
         if remaining_time <= 0:
-            print("Countdown finished!")
+           # print("Countdown finished!")
             running = False
 
 
