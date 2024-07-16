@@ -68,77 +68,51 @@ def main():
 
 
 
-    while in_game:
-
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-
-        if not balls:
-            task_completed = True
-            in_game = False
-
-
-
-        elapsed_time = pygame.time.get_ticks() - start_time
-        remaining_time = max(0, countdown_seconds * 1000 - elapsed_time)
-        seconds = remaining_time // 1000
-
-        seconds = seconds % 60
-        timer_text = f"{seconds:7}"
-
 
         clock.tick(60)
-        screen.fill(pygame.Color('lavender'))
 
-        pos = pygame.mouse.get_pos()
-        for ball in balls:
-            ball.move()
-            ball.draw()
-            if pygame.mouse.get_pressed()[0] and distance((ball.x, ball.y), pos) < ball.radius:
-                balls.remove(ball)
+        if not task_completed:
+            if not balls:
+                task_completed = True
+                in_game = False
 
 
 
+            elapsed_time = pygame.time.get_ticks() - start_time
+            remaining_time = max(0, countdown_seconds * 1000 - elapsed_time)
+            seconds = remaining_time // 1000
+
+            seconds = seconds % 60
+            timer_text = f"{seconds:7}"
 
 
+            screen.fill(pygame.Color('lavender'))
 
+            pos = pygame.mouse.get_pos()
+            for ball in balls:
+                ball.move()
+                ball.draw()
+                if pygame.mouse.get_pressed()[0] and distance((ball.x, ball.y), pos) < ball.radius:
+                    balls.remove(ball)
 
-        timer_surface = timer_font.render(timer_text, True, text_color)
-        timer_rect = timer_surface.get_rect(center=(5, 50))
-        screen.blit(timer_surface, timer_rect)
+            timer_surface = timer_font.render(timer_text, True, text_color)
+            timer_rect = timer_surface.get_rect(center=(5, 50))
+            screen.blit(timer_surface, timer_rect)
 
+        else:
+            # task_screen = pygame.display.set_mode((1000, 600))
+            screen.fill(pygame.Color('lightblue'))
 
-
-
+            task_text = "Task completed!"
+            task_text_surface = task_font.render(task_text, True, (0, 0, 0))
+            task_text_rect = task_text_surface.get_rect(center=(500, 300))
+            screen.blit(task_text_surface, task_text_rect)
 
         pygame.display.update()
-
-
-
-
-
-
-    if task_completed:
-        task_screen = pygame.display.set_mode((1000, 600))
-        task_screen.fill(pygame.Color('lightgreen'))
-
-        task_text = "Task completed!"
-        task_text_surface = task_font.render(task_text, True, (0, 0, 0))
-        task_text_rect = task_text_surface.get_rect(center=(500, 300))
-        task_screen.blit(task_text_surface, task_text_rect)
-
-        pygame.display.flip()
-        pygame.time.wait(10000)
-
-
-
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-
 
 
 main()
