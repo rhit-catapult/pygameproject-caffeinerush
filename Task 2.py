@@ -128,7 +128,7 @@ def main():
         task_text_rect = task_text_surface.get_rect(center=(500, 300))
         task_screen.blit(task_text_surface, task_text_rect)
 
-        pygame.display.updated()
+        pygame.display.flip()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
