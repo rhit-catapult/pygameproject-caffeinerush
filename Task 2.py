@@ -90,14 +90,18 @@ def main():
 
 
 
+
+
         timer_surface = timer_font.render(timer_text, True, text_color)
         timer_rect = timer_surface.get_rect(center=(5, 50))
         screen.blit(timer_surface, timer_rect)
 
 
         pygame.display.update()
+        if not balls:
+            running = False
+
         if remaining_time <= 0:
-           # print("Countdown finished!")
             running = False
 
 
