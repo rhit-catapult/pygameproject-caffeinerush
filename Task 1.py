@@ -75,7 +75,7 @@ def main():
         screen.blit(text_surface, text_rect)  # "TEST"
 
 
-        player_image = pygame.image.load("Coffee.jpeg")
+        player_image = pygame.image.load("Coffee.jpg")
         player_x, player_y = screen_width // 2, screen_height // 2
 
         if is_dragging:

@@ -8,7 +8,7 @@ class Character:
         self.x = x + 500
         self.y = y + 300
         self.draw_banna = False
-        self.image = pygame.image.load('Coffee.jpeg')
+        self.image = pygame.image.load('Coffee.jpg')
         self.width = 100
         self.height = 100
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
