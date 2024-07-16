@@ -34,15 +34,21 @@ def main():
 
     clock = pygame.time.Clock()
     clock.tick(60)
-    player = my_character.Character(screen, 10, 10)
+    # player = my_character.Character(screen, 10, 10)
     is_dragging = False
     customer = Customer_Aron_is_silly.Customer(screen, 250, 260)
     customers = []
     customers.append(customer)
     foods = []
-    foods.append(my_character.Character(screen, 20, 30))
-    foods.append(my_character.Character(screen, 90, 400))
+    # foods.append(my_character.Character(screen, 20, 30))
+    # foods.append(my_character.Character(screen, 90, 400))
     dragging_food = None
+
+    food_images = []
+    food_images.append(pygame.image.load("ChocoStraw.jpg"))
+    food_images.append(pygame.image.load("Coffee.jpg"))
+    food_images.append(pygame.image.load("Crossaint.jpg"))
+    food_images.append(pygame.image.load("Cupcake.jpg"))
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -67,12 +73,13 @@ def main():
 
 
 
-        pressed_keys = pygame.key.get_pressed()
+            pressed_keys = pygame.key.get_pressed()
 
         if len(customers) <= 5:
             customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 900), random.randint(0, 500)))
-        if len(foods) <= 500:
-            foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(0, 400)))
+        if len(foods) <= 5:
+            img = random.choice(food_images)
+            foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(0, 500), img))
 
 
 
@@ -86,8 +93,8 @@ def main():
 
         if is_dragging:
             pos = pygame.mouse.get_pos()
-            dragging_food.x = pos[0] - player.width / 2
-            dragging_food.y = pos[1] - player.width / 2
+            dragging_food.x = pos[0] - dragging_food.width / 2
+            dragging_food.y = pos[1] - dragging_food.width / 2
 
 
         # customer.draw()
