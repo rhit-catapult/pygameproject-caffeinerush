@@ -43,12 +43,17 @@ def main():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
-                if pos[0] >= player.x and pos[0] < player.x + player.width:
-                    if pos[1] >= player.y and pos[1] < player.y + player.height:
-                        is_dragging = True
+                # for food in foods
+                if player.get_rect().collidepoint(pos):
+                    is_dragging = True
 
             if event.type == pygame.MOUSEBUTTONUP and is_dragging:
                 is_dragging = False
+                pos = event.pos
+                if customer.get_rect().colliderect(player.get_rect()):
+                    # remove customer here
+                    print("RIP customer")
+
 
 
         pressed_keys = pygame.key.get_pressed()

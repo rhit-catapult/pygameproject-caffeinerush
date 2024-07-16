@@ -19,5 +19,7 @@ class Customer:
 
     def draw(self):
 
-
         self.screen.blit(self.image, (self.x, self.y))
+
+    def get_rect(self) -> pygame.Rect:
+        return pygame.Rect(self.x, self.y, self.width, self.height)

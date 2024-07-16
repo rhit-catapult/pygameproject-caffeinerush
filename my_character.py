@@ -27,6 +27,9 @@ class Character:
         self.x += deltax
         self.y += deltay
 
+    def get_rect(self) -> pygame.Rect:
+        return pygame.Rect(self.x, self.y, self.width, self.height)
+
 
 # This function is called when you run this file, and is used to test the Character class individually.
 # When you create more files with different classes, copy the code below, then
@@ -43,7 +46,6 @@ def test_character():
         screen.fill("white")
         character.draw()
         pygame.display.update()
-
 
 # Testing the classes
 # click the green arrow to the left or run "Current File" in PyCharm to test this class
