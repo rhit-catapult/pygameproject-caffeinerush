@@ -19,7 +19,7 @@ def main():
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
     screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
-    font = pygame.sysfont.Font('calibri-regular.ttf', 50) #creates the font
+    font = pygame.sysfont.Font('calibri-bold.ttf', 50) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
     text_surfont = pygame.font.Font(None, 100) #creates the font
     font2 = pygame.font.Font('papyrus.ttf', 100)
