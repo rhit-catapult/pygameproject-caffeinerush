@@ -56,8 +56,8 @@ def main():
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
 
-    image1 = pygame.image.load("Spacebarbackground.jpeg")
-    image1 = pygame.transform.scale(image1, (1000, 600))
+    image2 = pygame.image.load("Spacebarbackground.jpeg")
+    image2 = pygame.transform.scale(image2, (1000, 600))
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -71,12 +71,10 @@ def main():
         if True:  # task_screen = pygame.display.set_mode((1000, 600))
             screen.fill(pygame.Color('lightblue'))
             task_text = "Task completed!"
-            screen.blit(image1, (0, 0))
+            screen.blit(image2, (0, 0))
 
         mix.draw()
         pygame.display.update()
 
-
-
-
-main()
+if __name__ == "__main__":
+    main()
