@@ -109,9 +109,9 @@ def main():
                 task_text = "Task failed!"
                 task_text2 = "You have to retry!"
                 task_text_surface = task_font.render(task_text, True, (0, 0, 0))
-                task_text_rect = task_text_surface.get_rect(center=(500, 300))
+                task_text_rect = task_text_surface.get_rect(center=(500, 200))
                 task_text_surface2 = task_font.render(task_text2, True, (0,0,0))
-                task_text_rect2 = task_text_surface2.get_rect(center=(500,400))
+                task_text_rect2 = task_text_surface2.get_rect(center=(500,300))
                 screen.blit(task_text_surface2, task_text_rect2)
                 screen.blit(task_text_surface, task_text_rect)
 
