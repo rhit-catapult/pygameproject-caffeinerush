@@ -90,7 +90,7 @@ def main():
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         if task_text_rect2.collidepoint(event.pos):
                             pygame.quit()
-                            Task2.main()
+                            MainMenu.main()
                     pygame.display.update()
         clock.tick(60)
         # TODO 15: Make a Hero, named alyssa, with appropriate images, starting at position x=700 y=400.
