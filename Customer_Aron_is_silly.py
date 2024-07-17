@@ -12,7 +12,7 @@ class Customer:
         self.x = x
         self.y = y
         self.draw_banna = False
-        self.image = pygame.image.load('kirby Background Removed.jpeg')
+        self.image = pygame.image.load('kirby Background Removed.png')
         self.width = 100
         self.height = 100
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
