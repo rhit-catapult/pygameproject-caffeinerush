@@ -69,4 +69,6 @@ def main():
 
 
 print(pygame.font.get_fonts())
-main()
+if __name__ == "__main__":
+    main()
+

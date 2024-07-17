@@ -128,9 +128,19 @@ def main():
             # task_screen = pygame.display.set_mode((1000, 600))
             screen.fill(pygame.Color('lightblue'))
             task_text = "Task completed!"
+            task_text3 = "NEXT!"
+            task_text3_surface = task_font.render(task_text3, True, (0,0,0))
+            task_text_rect3 = task_text3_surface.get_rect(center=(500,300))
             task_text_surface = task_font.render(task_text, True, (0, 0, 0))
-            task_text_rect = task_text_surface.get_rect(center=(500, 300))
+            task_text_rect = task_text_surface.get_rect(center=(500, 200))
+            screen.blit(task_text3_surface, task_text_rect3)
             screen.blit(task_text_surface, task_text_rect)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if task_text_rect3.collidepoint(event.pos):
+                    pygame.quit()
+                    running = False
+                    os.execl(sys.executable, sys.executable, "Task 3.py")
+
 
         pygame.display.update()
 
