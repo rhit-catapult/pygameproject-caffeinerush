@@ -119,8 +119,8 @@ def main():
             dragging_food.y = pos[1] - dragging_food.width / 2
 
         if food_deleted > 5:
-            font = pygame.font.Font("calibri-italic.ttf", 100)
-            text_surface = font.render("!YOU WIN!", True, (25, 150, 20))  # creates text surface
+            font = pygame.font.Font("calibri.ttf", 100)
+            text_surface = font.render("YOU WIN!", True, (25, 150, 20))  # creates text surface
 
             while True:
                 for event in pygame.event.get():
