@@ -48,9 +48,9 @@ def main():
     clock.tick(60)
     # player = my_character.Character(screen, 10, 10)
     is_dragging = False
-    customer = Customer_Aron_is_silly.Customer(screen, 250, 260)
+    # customer = Customer_Aron_is_silly.Customer(screen, 250, 260)
     customers = []
-    customers.append(customer)
+    # customers.append(customer)
     foods = []
     # foods.append(my_character.Character(screen, 20, 30))
     # foods.append(my_character.Character(screen, 90, 400))
@@ -62,7 +62,7 @@ def main():
     food_images.append(pygame.image.load("CoffeeNoBackground.png"))
     food_images.append(pygame.image.load("CrossaintNoBackground.png"))
     food_images.append(pygame.image.load("CupcakeNoBackground.png"))
-    food_deleted = 0
+    food_deleted = 1
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -97,10 +97,10 @@ def main():
             pressed_keys = pygame.key.get_pressed()
 
         if len(customers) <= 5:
-            customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 900), random.randint(0, 500)))
+            customers.append(Customer_Aron_is_silly.Customer(screen, random.randint(0, 900), random.randint(10, 200)))
         if len(foods) <= 5:
             img = random.choice(food_images)
-            foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(0, 500), img))
+            foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(255, 345), img))
 
         #why is curbies dick out
 
