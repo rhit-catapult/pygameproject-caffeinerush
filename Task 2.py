@@ -104,6 +104,17 @@ def main():
             timer_surface = timer_font.render(timer_text, True, text_color)
             timer_rect = timer_surface.get_rect(center=(5, 50))
             screen.blit(timer_surface, timer_rect)
+            if remaining_time < 1:
+                screen.fill(pygame.Color('red'))
+                task_text = "Task failed!"
+                task_text2 = "You have to retry!"
+                task_text_surface = task_font.render(task_text, True, (0, 0, 0))
+                task_text_rect = task_text_surface.get_rect(center=(500, 300))
+                task_text_surface2 = task_font.render(task_text2, True, (0,0,0))
+                task_text_rect2 = task_text_surface2.get_rect(center=(500,400))
+                screen.blit(task_text_surface2, task_text_rect2)
+                screen.blit(task_text_surface, task_text_rect)
+
 
         else:
             # task_screen = pygame.display.set_mode((1000, 600))
