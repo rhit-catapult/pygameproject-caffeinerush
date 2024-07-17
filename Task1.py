@@ -6,6 +6,7 @@ import subprocess
 import sysconfig
 import os
 import Task2
+import MainMenu
 
 
 import Customer_Aron_is_silly
@@ -17,9 +18,14 @@ def main():
     pygame.init()
     screen_width = 1000 #defines the width
     screen_height = 600 #defines the height
+    text_color = (0, 0, 0)
     screen = pygame.display.set_mode((screen_width, screen_height))
     bg_color = ("white")
-
+    countdown_seconds = 10
+    start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
+    timer_font = pygame.font.Font(None, 100)
+    timer_text = ""
+    task_font = pygame.font.Font('papyrus.ttf', 50)
 #hi
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
@@ -58,6 +64,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+
+
+
+
+
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
                 # for food in foods
@@ -135,6 +147,32 @@ def main():
 
         for food in foods:
             food.draw()
+
+        elapsed_time = pygame.time.get_ticks() - start_time
+        remaining_time = max(0, countdown_seconds * 1000 - elapsed_time)
+        seconds = remaining_time // 1000
+
+        seconds = seconds % 60
+        timer_text = f"{seconds:7}"
+
+        timer_surface = timer_font.render(timer_text, True, text_color)
+        timer_rect = timer_surface.get_rect(center=(5, 50))
+        screen.blit(timer_surface, timer_rect)
+        if remaining_time < 1:
+            screen.fill(pygame.Color('red'))
+            task_text6 = "Task failed!"
+            task_text7 = "RETRY!"
+            task_text_surface6 = task_font.render(task_text6, True, (0, 0, 0))
+            task_text_rect6 = task_text_surface6.get_rect(center=(500, 200))
+            task_text_surface7 = task_font.render(task_text7, True, (0, 0, 0))
+            task_text_rect7 = task_text_surface7.get_rect(center=(500, 300))
+            screen.blit(task_text_surface7, task_text_rect7)
+            screen.blit(task_text_surface6, task_text_rect6)
+            task_rec = task_text_surface7.get_rect()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if task_text_rect7.collidepoint(event.pos):
+                    pygame.quit()
+                    MainMenu.main()
 
         pygame.display.update()
 
