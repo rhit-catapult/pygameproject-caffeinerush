@@ -142,7 +142,7 @@ def main():
                 if task_text_rect3.collidepoint(event.pos):
                     pygame.quit()
                     Task3.main()
-
+#
 
 
         pygame.display.update()
