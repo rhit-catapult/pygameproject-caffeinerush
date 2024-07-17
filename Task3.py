@@ -78,7 +78,7 @@ def main():
                    mix.show_left = not mix.show_left
                 counter = counter + 1
                 print("space_count =" + str(counter))
-        if counter > 30:
+        if counter == 30:
             font = pygame.font.Font("calibri-italic.ttf", 100)
             text_surface = font.render("!YOU WIN!", True, (25, 150, 20))  # creates text surface
             while True:
