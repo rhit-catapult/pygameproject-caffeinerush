@@ -22,12 +22,13 @@ def main():
     # create a screen
     pygame.display.set_caption("Caffeine Rush")
     # TODO: Change the size of the screen as you see fit!
-    screen = pygame.display.set_mode((screen_width, screen_height)) #sets the screen dimentions
+    screen = pygame.display.set_mode((screen_width, screen_height)) # sets the screen dimension
 
     font = pygame.font.Font("calibri-italic.ttf", 70)  # creates the font
     text_surface = font.render("Match Order To Customer", True, (25, 150, 20))  # creates text surface
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rect.center = (500, 40)  # centers text
+    # dimension
 
 
 
@@ -47,9 +48,10 @@ def main():
     #ASFGAFDH
     food_images = []
     food_images.append(pygame.image.load("ChocoStrawNoBackground.png"))
-    food_images.append(pygame.image.load("Coffee.jpg"))
-    food_images.append(pygame.image.load("Crossaint.jpg"))
-    food_images.append(pygame.image.load("Cupcake.jpg"))
+    food_images.append(pygame.image.load("CoffeeNoBackground.png"))
+    food_images.append(pygame.image.load("CrossaintNoBackground.png"))
+    food_images.append(pygame.image.load("CupcakeNoBackground.png"))
+    food_deleted = 0
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -70,6 +72,7 @@ def main():
                         customers.remove(customer)
                         if dragging_food in foods:
                             foods.remove(dragging_food)
+                            food_deleted += 1
                         print("RIP customer")
 
 
@@ -97,6 +100,22 @@ def main():
             dragging_food.x = pos[0] - dragging_food.width / 2
             dragging_food.y = pos[1] - dragging_food.width / 2
 
+        if food_deleted > 5:
+            font = pygame.font.Font("calibri-italic.ttf", 70)
+            text_surface = font.render("YOU WIMMMMM", True, (25, 150, 20))  # creates text surface
+
+            while True:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        sys.exit()
+                clock.tick(60)
+                screen.fill("Teal")
+                text_rect = text_surface.get_rect()  # get the rect of the play button
+                text_rect.center = (300, 40)  # centers text
+                screen.blit(text_surface, text_rect.center)
+
+
+                pygame.display.update()
 
         # customer.draw()
         # player.draw()
