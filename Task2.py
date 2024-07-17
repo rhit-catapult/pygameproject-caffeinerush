@@ -1,3 +1,5 @@
+from tkinter import font
+
 import pygame
 import sys
 import math
@@ -78,6 +80,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+        font = pygame.font.Font("calibri-bold.ttf", 80)  # creates the font
+        text_surface99 = font.render("CLICK TO POP BUBBLES", True, ("pink"))  # creates text surface
+        text_rect = text_surface99.get_rect()  # get the rect of the play button
+        text_rect.center = (500, 40)  # centers textz
+
 
         clock.tick(60)
 
@@ -85,7 +92,6 @@ def main():
             if not balls:
                 task_completed = True
                 in_game = False
-
 
 
             elapsed_time = pygame.time.get_ticks() - start_time
@@ -110,6 +116,7 @@ def main():
             screen.blit(timer_surface, timer_rect)
             if remaining_time < 1:
                 screen.fill(pygame.Color('red'))
+                text_surface99 = font.render(".", True, ("red"))
                 task_text = "Task failed!"
                 task_text2 = "RETRY!"
                 task_text_surface = task_font.render(task_text, True, (0, 0, 0))
@@ -125,10 +132,12 @@ def main():
                         MainMenu.main()
 
 
+            screen.blit(text_surface99, text_rect)
 
 
         else:
             # task_screen = pygame.display.set_mode((1000, 600))
+            text_surface99 = font.render(".", True, ("lightblue"))
             screen.fill(pygame.Color('lightblue'))
             task_text = "Task completed!"
             task_text3 = "NEXT!"
@@ -143,7 +152,7 @@ def main():
                     pygame.quit()
                     Task1.main()
 #
-
+            text_surface = text_surface99
 
         pygame.display.update()
 
