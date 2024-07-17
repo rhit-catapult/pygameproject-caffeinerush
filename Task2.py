@@ -141,7 +141,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if task_text_rect3.collidepoint(event.pos):
                     pygame.quit()
-                    \
+                    Task3.main()
 
 
 
