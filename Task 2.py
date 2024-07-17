@@ -2,7 +2,7 @@ import pygame
 import sys
 import math
 import random
-
+import os
 
 class Ball:
     def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
@@ -114,6 +114,14 @@ def main():
                 task_text_rect2 = task_text_surface2.get_rect(center=(500,300))
                 screen.blit(task_text_surface2, task_text_rect2)
                 screen.blit(task_text_surface, task_text_rect)
+                task_rec = task_text_surface2.get_rect()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if task_text_rect2.collidepoint(event.pos):
+                        pygame.quit()
+                        running = False
+                        os.execl(sys.executable, sys.executable, "Main Menu.py")
+
+
 
 
         else:
