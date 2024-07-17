@@ -43,12 +43,6 @@ class Mixer:
         else:
                 self.screen.blit(self.Right, (self.x, self.y))
 
-    def hit_by(self, raindrop):
-        """ Returns true if the given raindrop is hitting this Hero, otherwise false. """
-        # TODO 19: Return True if this Hero is currently colliding with the given Raindrop.
-        hero_hit_box = pygame.Rect(self.x, self.y, self.Right.get_width(), self.Right.get_height())
-        return hero_hit_box.collidepoint(raindrop.x, raindrop.y)
-
 def main():
     pygame.init()
     screen = pygame.display.set_mode((1000, 600))
