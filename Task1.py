@@ -5,6 +5,8 @@ import time
 import subprocess
 import sysconfig
 import os
+import Task2
+
 
 import Customer_Aron_is_silly
 import my_character
@@ -120,8 +122,7 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if task_text_rect2.collidepoint(event.pos):
                         pygame.quit()
-                        running = False
-                        os.execl(sys.executable, sys.executable, "Task 2.py")
+                        Task2.main()
 
 
                 pygame.display.update()

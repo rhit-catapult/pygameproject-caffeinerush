@@ -6,4 +6,4 @@ import subprocess
 import sysconfig
 import os
 
-def main:
+#def main:
