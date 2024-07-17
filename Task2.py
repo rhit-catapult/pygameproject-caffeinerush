@@ -3,6 +3,8 @@ import sys
 import math
 import random
 import os
+import MainMenu
+import Task3
 
 class Ball:
     def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
@@ -118,8 +120,7 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if task_text_rect2.collidepoint(event.pos):
                         pygame.quit()
-                        running = False
-                        os.execl(sys.executable, sys.executable, "Main Menu.py")
+                        MainMenu.main()
 
 
 
@@ -138,13 +139,13 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if task_text_rect3.collidepoint(event.pos):
                     pygame.quit()
-                    running = False
-                    os.execl(sys.executable, sys.executable, "Task 3.py")
+                    \
+
 
 
         pygame.display.update()
 
 #Thanks winston you the real G.O.A.T
 # we <3 winstin
-main()
-
+if __name__ == "__main__":
+    main()
