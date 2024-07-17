@@ -20,7 +20,10 @@ def main():
     screen_height = 600 #defines the height
     text_color = (0, 0, 0)
     screen = pygame.display.set_mode((screen_width, screen_height))
+    image8 = pygame.image.load("counter.jpeg")
+    image8 = pygame.transform.scale(image8, (1000, 300))
     bg_color = ("white")
+
     countdown_seconds = 10
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
@@ -103,6 +106,7 @@ def main():
 
 
         screen.fill((bg_color))
+        screen.blit(image8, (0, 300))
         screen.blit(text_surface, text_rect)  # "TEST"
 
 
