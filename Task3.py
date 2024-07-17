@@ -10,7 +10,7 @@ import os
 import time
 import subprocess
 import sysconfig
-import Task1
+import Task2
 import MainMenu
 
 class Mixer:
@@ -90,7 +90,7 @@ def main():
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         if task_text_rect2.collidepoint(event.pos):
                             pygame.quit()
-                            Task1.main()
+                            Task2.main()
                     pygame.display.update()
         clock.tick(60)
         # TODO 15: Make a Hero, named alyssa, with appropriate images, starting at position x=700 y=400.
