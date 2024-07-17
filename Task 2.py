@@ -107,7 +107,7 @@ def main():
             if remaining_time < 1:
                 screen.fill(pygame.Color('red'))
                 task_text = "Task failed!"
-                task_text2 = "You have to retry!"
+                task_text2 = "RETRY!"
                 task_text_surface = task_font.render(task_text, True, (0, 0, 0))
                 task_text_rect = task_text_surface.get_rect(center=(500, 200))
                 task_text_surface2 = task_font.render(task_text2, True, (0,0,0))

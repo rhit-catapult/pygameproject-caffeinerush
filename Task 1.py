@@ -113,6 +113,15 @@ def main():
                 text_rect = text_surface.get_rect()  # get the rect of the play button
                 text_rect.center = (300, 40)  # centers text
                 screen.blit(text_surface, text_rect.center)
+                task_text2 = "NEXT!"
+                task_text_surface2 = font.render(task_text2, True, (0, 0, 0))
+                task_text_rect2 = task_text_surface2.get_rect(center=(500, 300))
+                screen.blit(task_text_surface2, task_text_rect2)
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if task_text_rect2.collidepoint(event.pos):
+                        pygame.quit()
+                        running = False
+                        os.execl(sys.executable, sys.executable, "Task 2.py")
 
 
                 pygame.display.update()
