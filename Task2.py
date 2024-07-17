@@ -60,8 +60,8 @@ def main():
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
     task_font = pygame.font.Font('papyrus.ttf', 50)
-    image1 = pygame.image.load("sink.jpeg")
-    image1 = pygame.transform.scale(image1, (500, 300))
+    image1 = pygame.image.load("biggersink.jpeg")
+    image1 = pygame.transform.scale(image1, (1000, 300))
 
     balls = []
     for i in range(0,15):
@@ -95,7 +95,7 @@ def main():
 
 
             screen.fill(pygame.Color('lavender'))
-            screen.blit(image1, (250, 300))
+            screen.blit(image1, (0, 300))
             pos = pygame.mouse.get_pos()
             for ball in balls:
                 ball.move()
