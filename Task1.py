@@ -5,7 +5,7 @@ import time
 import subprocess
 import sysconfig
 import os
-import Task2
+import WinnerScreen
 import MainMenu
 
 
@@ -138,7 +138,7 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if task_text_rect2.collidepoint(event.pos):
                         pygame.quit()
-                        Task2.main()
+                        WinnerScreen.main()
 
 
                 pygame.display.update()

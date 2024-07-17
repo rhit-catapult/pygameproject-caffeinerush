@@ -6,7 +6,7 @@ import subprocess
 import os
 import sysconfig
 
-import Task1
+import Task3
 
 
 def main():
@@ -50,7 +50,7 @@ def main():
                     # python_executable = sys.executable
                     # subprocess.Popen([python_executable ,"Task1.py"]) This is another way to open another program
                     # But it will not close the other program
-                    Task1.main()
+                    Task3.main()
                     # os.execl(sys.executable, "testfile.py")
                     # os.execlp('python', 'python', "testfile.py", *sys.argv)
 

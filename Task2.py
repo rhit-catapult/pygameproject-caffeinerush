@@ -5,7 +5,7 @@ import random
 import os
 import MainMenu
 import time
-import Task3
+import Task1
 
 
 class Ball:
@@ -141,7 +141,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if task_text_rect3.collidepoint(event.pos):
                     pygame.quit()
-                    Task3.main()
+                    Task1.main()
 #
 
 
