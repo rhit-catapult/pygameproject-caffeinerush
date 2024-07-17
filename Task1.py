@@ -85,7 +85,7 @@ def main():
             img = random.choice(food_images)
             foods.append(my_character.Character(screen, random.randint(0, 900), random.randint(0, 500), img))
 
-
+        #why is curbies dick out
 
 
         screen.fill((bg_color))
@@ -136,4 +136,7 @@ def main():
             food.draw()
 
         pygame.display.update()
-main()
+
+print("Hello")
+if __name__ == "__main__":
+    main()

@@ -6,6 +6,7 @@ import subprocess
 import os
 import sysconfig
 
+import Task1
 
 
 def main():
@@ -42,19 +43,16 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 # Check if the mouse click is on the button
                 if text_rect.collidepoint(event.pos):
-                    pygame.quit()
                     running = False
+                    pygame.quit()
 
                     # Open Task1.py using subprocess
-                    #python_executable = sys.executable
-                    #subprocess.Popen([python_executable ,"Task 1.py"]) This is another way to open another program
-                    #But it will not close the other program
-                    os.execl(sys.executable, sys.executable, "Task 1.py")
-
-
-
-
-
+                    # python_executable = sys.executable
+                    # subprocess.Popen([python_executable ,"Task1.py"]) This is another way to open another program
+                    # But it will not close the other program
+                    Task1.main()
+                    # os.execl(sys.executable, "testfile.py")
+                    # os.execlp('python', 'python', "testfile.py", *sys.argv)
 
             # TODO: Add you events code
 
