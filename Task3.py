@@ -53,7 +53,7 @@ def main():
     pygame.display.set_caption('Winner Screen')
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
-
+    playing = True
     counter = 0
     image2 = pygame.image.load("Spacebarbackground.jpeg")
     image2 = pygame.transform.scale(image2, (1000, 600))
@@ -77,7 +77,9 @@ def main():
                 if pressed_keys[pygame.K_SPACE]:
                    mix.show_left = not mix.show_left
                 counter = counter + 1
+
                 print("space_count =" + str(counter))
+
         if counter == 30:
             font = pygame.font.Font("calibri-italic.ttf", 100)
             text_surface = font.render("!YOU WIN!", True, (25, 150, 20))  # creates text surface
@@ -112,6 +114,7 @@ def main():
             screen.fill(pygame.Color('red'))
             task_text6 = "Task failed!"
             task_text7 = "RETRY!"
+            playing = False
             task_text_surface6 = task_font.render(task_text6, True, (0, 0, 0))
             task_text_rect6 = task_text_surface6.get_rect(center=(500, 200))
             task_text_surface7 = task_font.render(task_text7, True, (0, 0, 0))
@@ -129,8 +132,8 @@ def main():
 
 
         # TODO 15: Make a Hero, named alyssa, with appropriate images, starting at position x=700 y=400.
-
-        mix.draw()
+        if playing:
+            mix.draw()
         pygame.display.update()
 
 if __name__ == "__main__":
