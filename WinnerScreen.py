@@ -3,6 +3,7 @@ import sys
 import math
 import random
 import os
+import MainMenu
 
 def main():
     pygame.init()
@@ -17,6 +18,15 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+
+            font2 = pygame.font.Font("calibri-italic.ttf", 80)
+            text_surface2 = font2.render("Back to menu", True, (0, 0, 0))
+            text_rect2 = text_surface2.get_rect(center=(500, 400))
+            screen.blit(text_surface2, text_rect2)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if text_rect2.collidepoint(event.pos):
+                    pygame.quit()
+                    MainMenu.main()
 
         clock.tick(60)
 
