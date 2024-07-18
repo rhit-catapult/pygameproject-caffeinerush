@@ -119,7 +119,7 @@ def main():
             dragging_food.y = pos[1] - dragging_food.width / 2
 
         if food_deleted > 5:
-            font = pygame.font.Font("calibri.ttf", 100)
+            font = pygame.font.Font("papyrus.ttf", 100)
             text_surface = font.render("YOU WIN!", True, (25, 150, 20))  # creates text surface
 
             while True:
@@ -129,7 +129,7 @@ def main():
                 clock.tick(60)
                 screen.fill("Green")
                 text_rect = text_surface.get_rect()  # get the rect of the play button
-                text_rect.center = (300, 40)  # centers text
+                text_rect.center = (210, 40)  # centers text
                 screen.blit(text_surface, text_rect.center)
                 task_text2 = "NEXT!"
                 task_text_surface2 = font.render(task_text2, True, (0, 0, 0))
