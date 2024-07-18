@@ -8,7 +8,7 @@ import os
 import MainMenu
 import time
 import Task1
-
+import WinnerScreen
 
 class Ball:
     def __init__(self, screen, color, x, y, radius, speed_x, speed_y):
@@ -150,7 +150,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if task_text_rect3.collidepoint(event.pos):
                     pygame.quit()
-                    Task1.main()
+                    WinnerScreen.main()
 #
             text_surface = text_surface99
 

@@ -7,6 +7,7 @@ import sysconfig
 import os
 import WinnerScreen
 import MainMenu
+import Task2
 
 
 import Customer_Aron_is_silly
@@ -24,7 +25,7 @@ def main():
     image8 = pygame.transform.scale(image8, (1000, 300))
     bg_color = ("white")
 
-    countdown_seconds = 4
+    countdown_seconds = 5
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
@@ -138,7 +139,7 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if task_text_rect2.collidepoint(event.pos):
                         pygame.quit()
-                        WinnerScreen.main()
+                        Task2.main()
 
 
                 pygame.display.update()

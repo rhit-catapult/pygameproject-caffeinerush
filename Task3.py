@@ -1,7 +1,4 @@
-
-
-
-#def main:
+# def main:
 import pygame
 import sys
 import math
@@ -12,6 +9,8 @@ import subprocess
 import sysconfig
 import Task2
 import MainMenu
+import Task1
+
 
 class Mixer:
     def __init__(self, screen, x, y, leftimage, rightimage):
@@ -28,7 +27,7 @@ class Mixer:
         self.x = x
         self.y = y
         self.Left = pygame.image.load(leftimage)
-        self.Left = pygame.transform.scale(self.Left, (150,150))
+        self.Left = pygame.transform.scale(self.Left, (150, 150))
         self.Right = pygame.image.load(rightimage)
         self.Right = pygame.transform.scale(self.Right, (150, 150))
         self.last_hit_time = 0
@@ -43,9 +42,10 @@ class Mixer:
         #       draw this Hero WITHOUT an umbrella,
         #       otherwise draw this Hero WITH an umbrella.
         if self.show_left:
-                self.screen.blit(self.Left, (self.x, self.y))
+            self.screen.blit(self.Left, (self.x, self.y))
         else:
-                self.screen.blit(self.Right, (self.x, self.y))
+            self.screen.blit(self.Right, (self.x, self.y))
+
 
 def main():
     pygame.init()
@@ -59,7 +59,7 @@ def main():
     image2 = pygame.transform.scale(image2, (1000, 600))
     mix = Mixer(screen, 418, 317, "Rightmixer.jpeg", "Leftmixer.jpeg")
     font = pygame.font.Font("calibri-italic.ttf", 70)  # creates the font
-    text_surface = font.render("Match Order To Customer", True, (25, 150, 20))  # creates text surface
+    text_surface = font.render("NEXT!", True, (0, 0, 0))  # creates text surface
     text_rect = text_surface.get_rect()  # get the rect of the play button
     text_rect.center = (500, 40)  # centers text
     text_color = (0, 0, 0)
@@ -75,7 +75,8 @@ def main():
             if event.type == pygame.KEYDOWN:
                 pressed_keys = pygame.key.get_pressed()
                 if pressed_keys[pygame.K_SPACE]:
-                   mix.show_left = not mix.show_left
+                    mix.show_left = not mix.show_left
+
                 counter = counter + 1
 
                 print("space_count =" + str(counter))
@@ -129,12 +130,33 @@ def main():
 
         # pygame.display.update()
 
-
-
         # TODO 15: Make a Hero, named alyssa, with appropriate images, starting at position x=700 y=400.
         if playing:
             mix.draw()
+        if counter >= 29:
+            while True:
+                clock.tick(60)
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        sys.exit()
+
+                    screen.fill("lightgreen")
+                    font = pygame.font.Font("calibri-italic.ttf", 100)
+                    text_surface = font.render("!YOU WIN!", True, (0, 0, 0))
+                    text_rect9 = text_surface.get_rect(center=(500, 200))
+                    screen.blit(text_surface, text_rect9)
+                    font2 = pygame.font.Font("calibri-italic.ttf", 80)
+                    text_surface2 = font2.render("NEXT!", True,(0,0,0))
+                    text_rect2 = text_surface2.get_rect(center=(500,300))
+                    screen.blit(text_surface2, text_rect2)
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if text_rect2.collidepoint(event.pos):
+                            pygame.quit()
+                            Task1.main()
+                pygame.display.update()
+
         pygame.display.update()
+
 
 if __name__ == "__main__":
     main()
