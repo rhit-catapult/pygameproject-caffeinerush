@@ -25,7 +25,7 @@ def main():
     image8 = pygame.transform.scale(image8, (1000, 300))
     bg_color = ("white")
 
-    countdown_seconds = 5
+    countdown_seconds = 8
     start_time = pygame.time.get_ticks()  # Get initial time in milliseconds
     timer_font = pygame.font.Font(None, 100)
     timer_text = ""
